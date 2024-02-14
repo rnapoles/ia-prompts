@@ -1,0 +1,47 @@
+Create a Repository in qt for this table:
+
+CREATE TABLE IF NOT EXISTS "Designs"(
+  "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+  "shape" VARCHAR(255) NOT NULL
+  "design" VARCHAR(255) NOT NULL
+  "right_width" FLOAT NOT NULL,
+  "right_height" FLOAT NOT NULL,
+  "right_position_x" FLOAT NOT NULL,
+  "right_position_y" FLOAT NOT NULL,
+  "left_width" FLOAT NOT NULL,
+  "left_height" FLOAT NOT NULL,
+  "left_position_x" FLOAT NOT NULL,
+  "left_position_y" FLOAT NOT NULL
+);
+
+implement the following class
+
+class DesignRepository 
+{
+public:
+    virtual void add(Design *obj) override;
+}
+
+add this method:
+    virtual void update(Design *obj) override;
+to DesignRepository, show only the code for DesignRepository::update  
+    
+add this method:
+    virtual void remove(Design *obj) override;
+to DesignRepository, show only the code for DesignRepository::remove  
+
+add this method:
+    virtual Design* find(int id) const override;
+to DesignRepository, show only the code for DesignRepository::find
+
+add this method:
+    virtual int countAll() override;
+to DesignRepository, show only the code for DesignRepository::countAll
+
+add this method:
+    virtual void flush() override;
+to DesignRepository, show only the code for DesignRepository::flush
+
+add this method:
+  Design *DesignRepository::findBy(const QString &shape, const QString &design)
+to DesignRepository, show only the code for DesignRepository::findBy

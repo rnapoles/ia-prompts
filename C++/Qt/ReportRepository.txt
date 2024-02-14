@@ -1,0 +1,90 @@
+Given this SQLITE table:
+
+CREATE TABLE IF NOT EXISTS "PrintTypes"(
+  "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+  "name" VARCHAR(255) NOT NULL
+);
+
+Follow the following rules:
+
+- Create the class PrintType using Qt code style. 
+- Split in .h and .cpp
+- The class is subsclass of QObject. 
+- Dont implement Q_PROPERTY. 
+- Dont implement signals or slots. 
+
+
+Given this SQLITE table:
+
+CREATE TABLE IF NOT EXISTS "PrintStatuses"(
+  "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+  "name" VARCHAR(255) NOT NULL
+);
+
+Follow the following rules:
+
+- Create the class PrintStatus using Qt code style. 
+- Split in .h and .cpp
+- The class is subsclass of QObject. 
+- Dont implement Q_PROPERTY. 
+- Dont implement signals or slots. 
+
+Given this SQLITE table:
+
+CREATE TABLE IF NOT EXISTS "Reports"(
+  "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+  "creation_date" VARCHAR(255) NOT NULL,
+  "operator" VARCHAR(255),
+  "design" INTEGER,
+  "type" INTEGER NOT NULL,
+  "status" INTEGER NOT NULL,
+  CONSTRAINT FK_I8FBWK57I9A FOREIGN KEY ("design") REFERENCES "Designs" ("id")
+   ON DELETE CASCADE,
+  CONSTRAINT FK_V4XWNHM9TWA FOREIGN KEY ("type") REFERENCES "PrintTypes" ("id")
+   ON DELETE CASCADE,
+  CONSTRAINT FK_23JO3BUEEUX FOREIGN KEY ("status") REFERENCES "PrintStatuses" ("id")
+   ON DELETE CASCADE
+);
+
+Follow the following rules:
+
+- Create the class Report using Qt code style. 
+- Split in .h and .cpp
+- The class is subsclass of QObject. 
+- Dont implement Q_PROPERTY. 
+- Dont implement signals or slots. 
+
+implement the following class
+
+class ReportRepository 
+{
+public:
+    virtual void add(Report *obj) override;
+}
+
+add this method:
+    virtual void update(Report *obj) override;
+to ReportRepository, show only the code for ReportRepository::update  
+    
+use sql upsert with ReportRepository::update, show only the code for this method
+
+add this method:
+    virtual void remove(Report *obj) override;
+to ReportRepository, show only the code for ReportRepository::remove  
+
+add this method:
+    virtual Report* find(int id) const override;
+to ReportRepository, show only the code for ReportRepository::find
+
+add this method:
+    virtual int countAll() override;
+to ReportRepository, show only the code for ReportRepository::countAll
+
+add this method:
+    virtual void flush() override;
+to ReportRepository, show only the code for ReportRepository::flush
+
+
+implement ReportModel that is subclass of QAbstractTableModel using ReportRepository
+
+implement ReportQueryModel that is subclass of QSqlQueryModel

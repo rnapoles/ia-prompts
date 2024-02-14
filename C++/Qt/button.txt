@@ -1,0 +1,9 @@
+using qml create a button using Rectangle with this rules:
+
+- the button will support border radius.
+- the button will support enable and disable.
+- when is disable the color will be diferent.
+- the button will support and image as background.
+- the button trigger onClicked.
+- when is pressed the background color will be changed.
+

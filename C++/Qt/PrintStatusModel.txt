@@ -1,0 +1,37 @@
+Given this SQLITE table:
+
+CREATE TABLE IF NOT EXISTS "PrintStatus"(
+  "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+  "name" VARCHAR(255) NOT NULL
+);
+
+Follow the following rules:
+
+- Create the class PrintStatusModel using Qt code style. 
+- The class is subsclass of QSqlQueryModel. 
+- Add support to use PrintStatusModel in QML
+- Add support for QObject
+- use select distinct to filter unique rows
+- Split in .h and .cpp
+- Dont implement Q_PROPERTY. 
+- Dont implement signals or slots. 
+
+##
+
+Given this SQLITE table:
+
+CREATE TABLE IF NOT EXISTS "PrintTypes"(
+  "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+  "name" VARCHAR(255) NOT NULL
+);
+
+Follow the following rules:
+
+- Create the class PrintTypeModel using Qt code style. 
+- The class is subsclass of QSqlQueryModel. 
+- Add support to use PrintTypeModel in QML
+- Add support for QObject
+- use select distinct to filter unique rows
+- Split in .h and .cpp
+- Dont implement Q_PROPERTY. 
+- Dont implement signals or slots. 

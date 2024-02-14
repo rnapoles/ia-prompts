@@ -1,0 +1,2 @@
+Write a function in C++ that allow resize a image, the function must have the option of
+mantain the aspect ratio
