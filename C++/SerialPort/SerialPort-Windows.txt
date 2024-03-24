@@ -1,0 +1,25 @@
+
+Implement a SerialPortStream class in Qt C++ that uses OVERLAPPED for IO.
+Implement this class using Win32 API, dont use !SerialPort
+Configure DCB Structure for the port parameters.
+    
+Split implementation in .h and .cpp
+
+The class must have this methods
+
+bool SerialPortStream::open(const QString &port) const;
+void QSerialPort::close();
+bool SerialPortStream::isOpen() const;
+QString SerialPortStream::readLine();
+bool SerialPortStream::writeLine(const QString &data);
+QString SerialPortStream::error() const
+
+ 
+signals:
+void SerialPortStream::errorOccurred(const QString &error);
+
+
+Create a C++ class that allow read and write from arduino using serial port
+- Setup DCB for serial communication
+- Use overlaped io
+ 
