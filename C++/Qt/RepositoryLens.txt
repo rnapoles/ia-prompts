@@ -1,0 +1,15 @@
+Given
+
+CREATE TABLE IF NOT EXISTS lens(
+  number INTEGER NOT NULL,
+  shape_number VARCHAR(3) NOT NULL,
+  width FLOAT NOT NULL,
+  height FLOAT NOT NULL,
+  positionX FLOAT NOT NULL,
+  positionY FLOAT NOT NULL
+);
+
+Create a qobject that represent this table
+
+implement IRepository for LensRepository width all methods 
+implemented (update, remove, find, countAll, flush) for LensRepository
